@@ -1,0 +1,27 @@
+.app {
+  width: 100%;
+  max-width: 560px;
+}
+
+.board {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
+}
+
+.board-header {
+  margin-bottom: 28px;
+}
+
+.board-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+
+.board-subtitle {
+  font-size: 0.875rem;
+  color: #888;
+}

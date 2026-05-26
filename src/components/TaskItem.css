@@ -1,0 +1,101 @@
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #f7f7fb;
+  border: 2px solid #e4e4f0;
+  border-radius: 10px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.task-item:hover {
+  border-color: #c9c9e8;
+}
+
+/* 完了済み */
+.task-item--completed {
+  background: #f0f0f0;
+  border-color: #e0e0e0;
+}
+
+.task-item__label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  cursor: pointer;
+  min-width: 0;
+}
+
+/* ネイティブcheckboxを非表示にしてカスタム表示 */
+.task-item__checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.task-item__checkmark {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #c0c0d8;
+  border-radius: 6px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  position: relative;
+}
+
+.task-item__checkbox:checked + .task-item__checkmark {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-color: transparent;
+}
+
+.task-item__checkbox:checked + .task-item__checkmark::after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.task-item__text {
+  font-size: 0.95rem;
+  color: #333;
+  word-break: break-word;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+/* 完了済みテキスト：グレー + 取り消し線 */
+.task-item--completed .task-item__text {
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.task-item__delete {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+
+.task-item__delete:hover {
+  background: #fdecea;
+  color: #e53935;
+}
